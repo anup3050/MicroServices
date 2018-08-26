@@ -2,6 +2,9 @@ package com.example.rest.websevices.restfullwebservice.User;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -9,8 +12,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description ="All info about User")
+@Entity
 public class User {
 
+	@Id
+	@GeneratedValue
 	private Integer userId;
 
 	@Size(min = 3, message = "Name should have atleast three char")
